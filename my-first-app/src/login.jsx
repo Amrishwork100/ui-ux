@@ -32,7 +32,7 @@ class Login extends Component {
                                 onChange={(event) => { this.setState({ password: event.target.value }) }} />
                         </div>
                         <div className="d-grid gap-2 mt-3">
-                            <button type="submit" className="btn btn-warning text-dark" onClick={this.onLoginClick}>Submit</button>
+                            <button type="submit" className="btn btn-warning " onClick={this.onLoginClick}>Submit</button>
                         </div>
                         <p className="forgot-password text-right mt-2">Forgot <a href="#">password?</a></p>
                     </div>

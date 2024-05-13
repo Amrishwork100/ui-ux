@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react"
 import React, { Component } from "react"
 
 export default class CustomerList extends Component {
@@ -17,10 +16,10 @@ export default class CustomerList extends Component {
     render() {
         return (
             <div>
-                <h4 className="m-1 p-1">{this.state.pageTitle}
+                {/* <h4 className="m-1 p-1">{this.state.pageTitle}
                     <span className="badge text-bg-success mx-2">{this.state.customerCount}</span>
                     <button className="btn btn-danger" onClick={this.onRefreshClick}>Refresh</button>
-                </h4>
+                </h4> */}
 
                 <table className="table">
                     <thead>
