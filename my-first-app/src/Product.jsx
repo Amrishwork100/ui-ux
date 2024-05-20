@@ -12,8 +12,8 @@ export default class Product extends Component {
                         <h5 className=" pt-2 border-top">{this.props.product.productName}</h5>
                         <div>${this.props.product.price}</div>
                         <div className="card-footer text-right">
+                            <button className="btn btn-primary align-right" >Buy Now</button>
                         </div>
-                        <button className="btn btn-primary" >Buy Now</button>
                         {/* <div style="display: flex; justify-content: flex-end">
                             <button>Buy Now</button>
                         </div> */}
