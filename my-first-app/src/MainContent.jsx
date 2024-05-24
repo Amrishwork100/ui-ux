@@ -1,30 +1,51 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
+import shopImage1 from "./images/main1.jpg";
+
 
 
 class MainContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            workArrays: [
-                { id: 1, img: "./images/slide1.jpg" },
-                { id: 2, img: "./images/slide1.jpg" },
-                { id: 3, img: "./images/slide1.jpg" },
-                { id: 4, img: "./images/slide1.jpg" }],
+            images: [
+                { id: 1, img: "./images/main1.jpg" },
+                { id: 2, img: "./images/slide2.jpg" },
+                { id: 3, img: "./images/slide3.jpg" },
+                { id: 4, img: "./images/slide4.jpg" }],
         };
     }
 
     render() {
         return (
             <div>
-                <div className='image-slider'></div>
+
+                <div className='image-slider'>
+
+                    {/* <Slider {...this.settings} >
+
+                        {this.state.images.map((image) => {
+                            <div className="slider-container">
+                                console.log(image)
+                                {this.retrieveImage(image)}
+                            </div>
+                        })}
+
+                    </Slider> */}
+
+                </div>
+
+
                 <div className="box-products">
 
                     <div className='items'>
                         <h4>Starting ₹99 | Start your fitness journey</h4>
-                        <Link to="/pro">
-                            <div className="box1 box"></div>
-                        </Link>
+                        <div className="box">
+                            <Link to="/pro1">
+                                <img className='myImage' src={shopImage1} alt='pic1'></img>
+                            </Link>
+                        </div>
+
                     </div>
 
                     <div className='items'>
@@ -75,6 +96,10 @@ class MainContent extends Component {
 
         );
 
+    }
+
+    retrieveImage(image) {
+        return (<span><img key={image.id} src={image.img} alt=""></img></span>)
     }
 
 }

@@ -7,6 +7,8 @@ import NoMatchFound from "./NoMatchFound";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { Route,Routes } from "react-router";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Home from "./Home";
 import Support from "./Support";
 import CustomerList from "./CustomerList";
@@ -26,7 +28,7 @@ export default class App extends Component {
                 <Routes>
                     {/* <Route path="/" exact Component={NavBar}/> */}
                     <Route path="/" exact Component={Home} />
-                    <Route path="/pro" exact Component={Product} />
+                    <Route path="/pro1" exact Component={Product} />
                     <Route path="/customers" exact Component={CustomerList} />
                     <Route path="/cart" exact Component={ShoppingCart} />
                     <Route path="/support" exact Component={Support} />

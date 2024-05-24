@@ -176,16 +176,30 @@ label {
   /* border: 2px solid white */
  
 }
+.box-x{
+  width: 280px;
+  height: 280px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+.myImage{
+  width: 280px;
+  height: 280px;
+  background-size: cover;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
 .box{
   width: 280px;
   height: 280px;
   margin-top: 20px;
-  
-  
-  
 }
 .box1{
-  background-image: url("./images/main1.jpg");
+  /* background-image: url("./images/main1.jpg"); */
   background-size: cover;
 }
 .box2{
