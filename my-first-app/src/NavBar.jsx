@@ -8,47 +8,48 @@ class NavBar extends Component {
             <div>
                 <nav className="navbar navbar-expand-lg bg-dark navbar-style ">
                     <div className="container-fluid">
-                        <h1 className="navbar-brand text-warning" >eCommerce</h1>
-                        {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button> */}
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <h1 className="navbar-brand text-warning" >Apper</h1>
+
+                        {!this.props.isLoggedIn ? (
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link to="/home" className="nav-link text-warning border-bottom" >Home</Link>
+                                    <Link to="/" className="nav-link text-warning " >login</Link>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        ) : ""}
+
+
+                        {this.props.isLoggedIn ? (
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link to="/customers" className="nav-link text-warning border-bottom" >Customers</Link>
+
+                                    <Link to="/dashboard" className="nav-link text-warning" >DashBoard</Link>
                                 </li>
-                            </ul>
-                        </div>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            </ul>) : ""}
+
+
+                        {this.props.isLoggedIn ? (
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link to="/cart" className="nav-link text-warning border-bottom">ShoppingCart</Link>
+                                    <Link to="/customers" className="nav-link text-warning " >Customers</Link>
                                 </li>
-                            </ul>
-                        </div>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            </ul>) : ""}
+
+                        {this.props.isLoggedIn ? (
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link to="/support" className="nav-link text-warning border-bottom" >support</Link>
+                                    <Link to="/cart" className="nav-link text-warning ">ShoppingCart</Link>
                                 </li>
-                            </ul>
-                        </div>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            </ul>) : ""}
+
+
+                        {this.props.isLoggedIn ? (
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link to="/login" className="nav-link text-warning border-bottom" >login</Link>
+                                    <Link to="/support" className="nav-link text-warning " >support</Link>
                                 </li>
-                            </ul>
-                        </div>
+                            </ul>) : ""}
+
                     </div>
                 </nav>
             </div>

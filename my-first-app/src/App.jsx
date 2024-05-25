@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import NavBar from "./NavBar";
-import Header from "./Header"
+//import Header from "./Header"
 import ShoppingCart from "./ShoppingCart";
 import Login from "./login";
 import NoMatchFound from "./NoMatchFound";
@@ -9,33 +8,44 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Home from "./Home";
 import Support from "./Support";
 import CustomerList from "./CustomerList";
-import Footer from "./Footer";
-import MainContent from "./MainContent";
-import Product from "./component/Product";
+import NavBar from "./NavBar";
+import DashBoard from "./DashBoard";
 
 
 export default class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoggedIn: false
+        }
+    }
+
 
     render() {
         return (
             // <Switch>
             <BrowserRouter>
-                <Header />
-                <MainContent/>
+                {/* <Header /> */}
+                {/* <MainContent/> */}
+
+                <NavBar isLoggedIn={this.state.isLoggedIn} />
                 <Routes>
-                    {/* <Route path="/" exact Component={NavBar}/> */}
-                    <Route path="/" exact Component={Home} />
-                    <Route path="/pro1" exact Component={Product} />
+                    {/* <Route path="/" render={
+                        (props) => (
+                            <Login {...props}
+                                updateLoginStatus={this.state.updateLoginStatus}
+                            />)} /> */}
+                    <Route path="/" exact Component={Login} />
+                    <Route path="/dashboard" exact Component={DashBoard} />
                     <Route path="/customers" exact Component={CustomerList} />
                     <Route path="/cart" exact Component={ShoppingCart} />
                     <Route path="/support" exact Component={Support} />
-                    <Route path="/login" exact Component={Login} />
                     <Route path="*" Component={NoMatchFound} />
                 </Routes>
-                <Footer/>
+
             </BrowserRouter>
             // </Switch>
             // <React.Fragment>
@@ -44,5 +54,9 @@ export default class App extends Component {
             // </React.Fragment>
 
         )
+    }
+
+    updateLoginStatus(status) {
+        this.setState(this.isLoggedIn = status);
     }
 }

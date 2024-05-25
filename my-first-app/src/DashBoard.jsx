@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
-class Product extends Component {
+class DashBoard extends Component {
     render() {
         return (
+        
             <div>
-               <h3>Work is in progress stage</h3> 
+                DashBoard
             </div>
         );
     }
 }
 
-export default Product;
+export default DashBoard;

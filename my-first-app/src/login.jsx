@@ -34,7 +34,10 @@ class Login extends Component {
                         <div className="d-grid gap-2 mt-3">
                             <button type="submit" className="btn btn-warning " onClick={this.onLoginClick}>Submit</button>
                         </div>
-                        <p className="forgot-password text-right mt-2">Forgot <a href="#">password?</a></p>
+                        <div className='set-password-register'>
+                            <p className="text-right-p1">Forgot <a href="#">password?</a></p>
+                            <p className="text-right-p2">New User? <a href="#">Registration</a></p>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -46,15 +49,19 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        var response = await fetch("http://localhost:8080/user/v1/api/login", {
+        console.log("I am going to call backend service...")
+        var response = await fetch("http://localhost:9090/user/v1/api/login", {
             method: "POST", body: JSON.stringify(user),
             headers: {
                 "Content-type": "application/json"
             }
         })
         var body = await response.json();
+        console.log(body)
         if (body.length > 0) {
+            console.log(body)
             this.setState({ message: (< span className='text-success'> Succesfully login</span >) });
+            this.props.updateLoginStatus(true);
 
         } else {
             this.setState({ message: (< span className='text-danger'> Invalid login! please try again</span >) });

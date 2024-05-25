@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {  Link } from "react-router-dom";
-import shopImage1 from "./images/main1.jpg";
+import { Link } from "react-router-dom";
 
 
 
@@ -20,21 +19,7 @@ class MainContent extends Component {
         return (
             <div>
 
-                <div className='image-slider'>
-
-                    {/* <Slider {...this.settings} >
-
-                        {this.state.images.map((image) => {
-                            <div className="slider-container">
-                                console.log(image)
-                                {this.retrieveImage(image)}
-                            </div>
-                        })}
-
-                    </Slider> */}
-
-                </div>
-
+                <div className='image-slider'> </div>
 
                 <div className="box-products">
 
@@ -42,7 +27,7 @@ class MainContent extends Component {
                         <h4>Starting ₹99 | Start your fitness journey</h4>
                         <div className="box">
                             <Link to="/pro1">
-                                <img className='myImage' src={shopImage1} alt='pic1'></img>
+                                <img className='myImage' src={require('./images/main1.jpg')} alt='pic1'></img>
                             </Link>
                         </div>
 
