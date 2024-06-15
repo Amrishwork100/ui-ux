@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import NavBar from "./NavBar";
+import NavBar from "./NavBar";
 import Header from "./Header"
 import ShoppingCart from "./ShoppingCart";
 import Login from "./login";
@@ -23,8 +23,9 @@ export default class App extends Component {
         return (
             // <Switch>
             <BrowserRouter>
+            {/* <NavBar/> */}
                 <Header />
-                {/* <MainContent/> */}
+                <MainContent/>
                 <Routes>
                     {/* <Route path="/" exact Component={NavBar}/> */}
                     <Route path="/" exact Component={MainContent} />

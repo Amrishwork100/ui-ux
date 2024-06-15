@@ -1,62 +1,48 @@
-import React, { Component } from "react";
-//import Header from "./Header"
+import { useState } from "react";
 import ShoppingCart from "./ShoppingCart";
 import Login from "./login";
 import NoMatchFound from "./NoMatchFound";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import { Route,Routes } from "react-router";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import Support from "./Support";
 import CustomerList from "./CustomerList";
 import NavBar from "./NavBar";
 import DashBoard from "./DashBoard";
+import ProductDetails from "./ProductDetails"
 
+function App() {
+  let [isLoggedIn, setIsLoggedIn] = useState(false);
 
-export default class App extends Component {
+  function updateLoginStatus(status) {
+    return setIsLoggedIn(status);
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoggedIn: false
-        }
-    }
+  return (
+    <Router>
+      <NavBar isLoggedIn={isLoggedIn} />
+      <Routes>
+        {/* <Route path="/login" exact element={<Login 
+          {(props)=> {updateLoginStatus=this.updateLoginStatus} } />}/> */}
+        <Route
+          path="/login"
+          element={
+            <Login
+              isLoggedIn={isLoggedIn}
+              updateLoginStatus={updateLoginStatus}
+            />
+          }
+        />
 
-
-    render() {
-        return (
-            // <Switch>
-            <BrowserRouter>
-                {/* <Header /> */}
-                {/* <MainContent/> */}
-
-                <NavBar isLoggedIn={this.state.isLoggedIn} />
-                <Routes>
-                    {/* <Route path="/" render={
-                        (props) => (
-                            <Login {...props}
-                                updateLoginStatus={this.state.updateLoginStatus}
-                            />)} /> */}
-                    <Route path="/" exact Component={Login} />
-                    <Route path="/dashboard" exact Component={DashBoard} />
-                    <Route path="/customers" exact Component={CustomerList} />
-                    <Route path="/cart" exact Component={ShoppingCart} />
-                    <Route path="/support" exact Component={Support} />
-                    <Route path="*" Component={NoMatchFound} />
-                </Routes>
-
-            </BrowserRouter>
-            // </Switch>
-            // <React.Fragment>
-            //     <NavBar/>
-            //     <Login />
-            // </React.Fragment>
-
-        )
-    }
-
-    updateLoginStatus(status) {
-        this.setState(this.isLoggedIn = status);
-    }
+        <Route path="/dashboard" exact element={<DashBoard />} />
+        <Route path="/customers" exact element={<CustomerList />} />
+        <Route path="/cart" exact element={<ShoppingCart />} />
+        <Route path="/support" exact element={<Support />} />
+        <Route path="/productDetails" exact element={<ProductDetails />} />
+        <Route path="*" element={<NoMatchFound />} />
+      </Routes>
+    </Router>
+  );
 }
+export default App;

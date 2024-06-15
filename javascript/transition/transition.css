@@ -1,0 +1,38 @@
+div {
+  margin-top: 100px;
+  margin-left: 400px;
+}
+
+.myHome {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  background-color: aqua;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: ease-in;
+  text-align: center;
+  border-radius: 50px;
+}
+.myHome:hover {
+  width: 500px;
+}
+
+.transtionPro {
+  height: 100px;
+  width: 100px;
+  border: 2px solid #000000;
+  background-color: aquamarine;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 0.5s;
+  text-align: center;
+  top: 20px;
+  border-radius: 50px;
+}
+
+.transtionPro:hover {
+  background-color: blue;
+  color: white;
+}
